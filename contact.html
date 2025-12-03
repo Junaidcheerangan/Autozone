@@ -18,7 +18,7 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Auto <span>Zone</span></div>
+                <div class="logo"><img src="assets/images/autozonelogo.png" alt="Auto Zone"></div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -56,7 +56,7 @@
                         <h4><i class="fas fa-map-marker-alt"
                                 style="color: var(--primary-color); margin-right: 10px;"></i> Address</h4>
                         <p>KOTTAKKAL - PERINTHALMANNA ROAD,
-KURUPPINPADI</p>
+                            KURUPPINPADI</p>
                     </div>
 
                     <div class="info-item">
@@ -68,23 +68,23 @@ KURUPPINPADI</p>
                     <div class="info-item">
                         <h4><i class="fas fa-envelope" style="color: var(--primary-color); margin-right: 10px;"></i>
                             Email</h4>
-                        <p>info@autozone.ae</p>
+                        <p>junaidcheeran@gmail.com</p>
                     </div>
 
                     <div class="info-item">
                         <h4><i class="fas fa-clock" style="color: var(--primary-color); margin-right: 10px;"></i>
                             Working Hours</h4>
-                        <p>Mon - Sat: 8:00 AM - 8:00 PM<br>: Closed</p>
+                        <p>Mon - Sat: 8:00 AM - 8:00 PM<br>Sun: Closed</p>
                     </div>
                 </div>
 
                 <div class="contact-form-wrapper">
-                    <form class="contact-form">
+                    <form class="contact-form" id="contact-form">
                         <h3>Send Us A Message</h3>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="text" placeholder="Subject">
-                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                        <input type="text" id="subject" placeholder="Subject">
+                        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
@@ -104,7 +104,7 @@ KURUPPINPADI</p>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <div class="logo">Auto <span>Zone</span></div>
+                    <div class="logo"><img src="assets/images/autozonelogo.png" alt="Auto Zone"></div>
                     <p style="margin-top: 20px;">Your trusted partner for car accessories, cleaning, and maintenance.
                     </p>
                 </div>
@@ -140,6 +140,8 @@ KURUPPINPADI</p>
         </div>
     </footer>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="assets/js/contact.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 

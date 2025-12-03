@@ -1,8 +1,11 @@
 /* Global Styles */
 :root {
-    --primary-color: #ff3b30; /* Neon Red */
-    --secondary-color: #0a0a0a; /* Deep Black */
-    --accent-color: #1c1c1e; /* Dark Grey */
+    --primary-color: #ff3b30;
+    /* Neon Red */
+    --secondary-color: #0a0a0a;
+    /* Deep Black */
+    --accent-color: #1c1c1e;
+    /* Dark Grey */
     --text-color: #ffffff;
     --text-muted: #a1a1a6;
     --font-main: 'Outfit', sans-serif;
@@ -39,17 +42,37 @@ img {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
-h1 { font-size: 3.5rem; text-transform: uppercase; letter-spacing: 2px; }
-h2 { font-size: 2.5rem; text-transform: uppercase; color: var(--primary-color); }
-h3 { font-size: 1.5rem; }
+h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
-p { margin-bottom: 1rem; color: var(--text-muted); }
+h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
 
 /* Utility Classes */
 .container {
@@ -89,7 +112,9 @@ p { margin-bottom: 1rem; color: var(--text-muted); }
     padding: 80px 0;
 }
 
-.text-center { text-align: center; }
+.text-center {
+    text-align: center;
+}
 
 /* Header */
 header {
@@ -111,14 +136,19 @@ nav {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
 }
 
-.logo span { color: var(--primary-color); }
+.logo img {
+    max-height: 75px;
+    width: auto;
+    max-width: 100%;
+}
+
+footer .logo img {
+    max-height: 70px;
+}
 
 .nav-links {
     display: flex;
@@ -132,7 +162,8 @@ nav {
     letter-spacing: 1px;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary-color);
 }
 
@@ -153,7 +184,7 @@ nav {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/hero_background.png') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero_background.png') no-repeat center center/cover;
     display: flex;
     align-items: center;
     text-align: center;
@@ -194,7 +225,6 @@ nav {
     overflow: hidden;
     transition: var(--transition);
     position: relative;
-    group: hover;
 }
 
 .service-card:hover {
@@ -295,7 +325,8 @@ nav {
     color: #fff;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
@@ -306,7 +337,8 @@ nav {
     font-family: inherit;
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     outline: none;
     border-color: var(--primary-color);
 }
@@ -353,6 +385,7 @@ footer {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -361,14 +394,31 @@ footer {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    
-    .hamburger { display: block; z-index: 1001; }
-    .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1001;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
     .nav-links {
         position: fixed;
         left: -100%;
@@ -381,12 +431,13 @@ footer {
         align-items: center;
         transition: 0.3s;
     }
-    
+
     .nav-links.active {
         left: 0;
     }
-    
-    .about-content, .contact-container {
+
+    .about-content,
+    .contact-container {
         grid-template-columns: 1fr;
     }
 }
