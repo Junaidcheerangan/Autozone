@@ -1,7 +1,6 @@
 (function () {
     // Initialize EmailJS with your user ID
-    // TODO: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-    emailjs.init("YOUR_PUBLIC_KEY");
+    emailjs.init("3c0PheHfBlmlEbxhA");
 
     document.getElementById('contact-form').addEventListener('submit', function (event) {
         event.preventDefault();
@@ -21,18 +20,33 @@
         };
 
         // Send email
-        // TODO: Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual IDs
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-            .then(function () {
-                alert('Message sent successfully!');
-                document.getElementById('contact-form').reset();
-                btn.innerText = originalBtnText;
-                btn.disabled = false;
-            }, function (error) {
-                console.error('FAILED...', error);
-                alert('Failed to send message: ' + JSON.stringify(error));
-                btn.innerText = originalBtnText;
-                btn.disabled = false;
-            });
+        const serviceID = 'service_hwpdp4b';
+        const templateID = 'template_2guuvtt';
+
+        // Check if EmailJS is defined (it should be if the script is loaded in HTML)
+        if (typeof emailjs !== 'undefined') {
+            emailjs.send(serviceID, templateID, templateParams)
+                .then(function () {
+                    alert('Message sent successfully!');
+                    document.getElementById('contact-form').reset();
+                    btn.innerText = originalBtnText;
+                    btn.disabled = false;
+                }, function (error) {
+                    console.error('FAILED...', error);
+                    // For demo purposes, if keys are missing, we might still want to show a success message or a specific error
+                    if (error.text && error.text.includes("The user_id is invalid")) {
+                        alert('Message simulated (EmailJS keys missing). Check console for details.');
+                    } else {
+                        alert('Failed to send message. Please try again later.');
+                    }
+                    btn.innerText = originalBtnText;
+                    btn.disabled = false;
+                });
+        } else {
+            console.error('EmailJS library not loaded.');
+            alert('Email system is currently unavailable.');
+            btn.innerText = originalBtnText;
+            btn.disabled = false;
+        }
     });
 })();
